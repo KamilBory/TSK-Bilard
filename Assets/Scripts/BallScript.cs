@@ -5,23 +5,18 @@ using UnityEngine;
 public class BallScript : MonoBehaviour
 {
 
-    public Rigidbody rigidbody;
-
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        
-    }
-
-    private void OnCollisionEnter(Collision collision)
-    {
-        rigidbody.AddForce(GetComponent<PoolScript>().moveVec);
-        Destroy(collision.gameObject);
+        if(Input.GetMouseButtonDown(0))
+        {
+            this.GetComponent<Rigidbody>().AddForce(Vector3.left * 10000f);
+        }
     }
 }

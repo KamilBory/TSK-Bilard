@@ -17,4 +17,9 @@ public class PoolScript : MonoBehaviour
     {
         gameObject.transform.position += moveVec * Time.deltaTime;
     }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        Destroy(gameObject, 0.05f);
+    }
 }
