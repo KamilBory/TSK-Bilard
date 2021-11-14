@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class BallScript : MonoBehaviour
 {
@@ -14,9 +15,11 @@ public class BallScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetMouseButtonDown(0))
-        {
-            this.GetComponent<Rigidbody>().AddForce(Vector3.left * 10000f);
-        }
+        
+    }
+
+    public void AddForce()
+    {
+        this.GetComponent<Rigidbody>().AddForce(Vector3.left * 10000f);
     }
 }
