@@ -264,7 +264,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: afefc6355a8aace43a5752041629dde1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveVec: {x: 0, y: 0, z: 0}
   slider: {fileID: 0}
   heightSlider: {fileID: 0}
   powerSlider: {fileID: 0}
@@ -1042,7 +1041,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: afefc6355a8aace43a5752041629dde1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveVec: {x: 0, y: 0, z: 0}
   slider: {fileID: 436924429}
   heightSlider: {fileID: 507074139}
   powerSlider: {fileID: 946450867}
@@ -1462,8 +1460,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 316739735}
-        m_MethodName: AddForce
+      - m_Target: {fileID: 710513404}
+        m_MethodName: HitBall
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1596,7 +1594,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 1902661653}
   m_Direction: 0
   m_MinValue: 0
-  m_MaxValue: 20
+  m_MaxValue: 50
   m_WholeNumbers: 0
   m_Value: 0
   m_OnValueChanged:
