@@ -141,6 +141,7 @@ public class PoolScript : MonoBehaviour
     {
         if(collision.gameObject.name == "WhiteBall")
         {
+            collision.rigidbody.AddForce(moveVec * powerSlider.value);
             moveVec = new Vector3(0.0f, 0.0f, 0.0f);
         }
     }
