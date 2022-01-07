@@ -133,39 +133,6 @@ public class PoolScript : MonoBehaviour
 
     public void HitBall()
     {
-        float degree = slider.value;
-        float x = 0.0f;
-        float z = 0.0f;
-
-        if (degree < 90.0f)
-        {
-            // dodaj x, odejmij z
-            float tmp = degree / 90.0f;
-            x = (1.0f - tmp) * powerSlider.value;
-            z = tmp * powerSlider.value;
-        }
-        else if (degree >= 90.0f && degree < 180.0f)
-        {
-            // odejmij x, odejmij z
-            float tmp = (degree - 90.0f) / 90.0f;
-            x = tmp * powerSlider.value;
-            z = (1.0f - tmp) * powerSlider.value;
-        }
-        else if (degree >= 180.0f && degree < 270.0f)
-        {
-            // odejmij x, dodaj z
-            float tmp = (degree - 180.0f) / 90.0f;
-            x = (1.0f - tmp) * powerSlider.value;
-            z = tmp * powerSlider.value;
-        }
-        else if (degree >= 270.0f)
-        {
-            // dodaj x, dodaj z
-            float tmp = (degree - 270.0f) / 90.0f;
-            x = tmp * powerSlider.value;
-            z = (1.0f - tmp) * powerSlider.value;
-        }
-
-        moveVec = new Vector3(-x, 0.0f, -z);
+        moveVec = new Vector3(whiteBall.gameObject.transform.position.x - transform.position.x, 0.0f, whiteBall.gameObject.transform.position.z - transform.position.z);
     }
 }
