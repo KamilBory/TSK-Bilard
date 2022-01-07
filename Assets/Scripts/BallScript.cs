@@ -17,9 +17,4 @@ public class BallScript : MonoBehaviour
     {
         
     }
-
-    public void AddForce()
-    {
-        this.GetComponent<Rigidbody>().AddForce(Vector3.left * 10000f);
-    }
 }
