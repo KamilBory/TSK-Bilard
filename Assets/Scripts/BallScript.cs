@@ -36,8 +36,9 @@ public class BallScript : MonoBehaviour
         }
 
         //transform.position += gravity * Time.deltaTime;
+        //transform.position = new Vector3(transform.position.x, ballHeight, transform.position.z);
 
-        rigidbody.velocity = rigidbody.velocity * 0.984f;
+        rigidbody.velocity = rigidbody.velocity * 0.989f;
         if(rigidbody.velocity.magnitude < 0.1f) {
             rigidbody.velocity = new Vector3(0, 0, 0);
             rigidbody.angularVelocity = new Vector3(0, 0, 0);
