@@ -128,7 +128,7 @@ public class PoolScript : MonoBehaviour
     public void HitBall()
     {
         moveVec = new Vector3(whiteBall.gameObject.transform.position.x - transform.position.x, 0.0f, whiteBall.gameObject.transform.position.z - transform.position.z);
-        moveVec *= powerSlider.value / 10.0f;
+        moveVec *= powerSlider.value / 5.0f;
     }
 
     private void OnCollisionEnter(Collision collision)
@@ -137,7 +137,7 @@ public class PoolScript : MonoBehaviour
         {
             collision.rigidbody.AddForce(moveVec * powerSlider.value);
             moveVec = new Vector3(0.0f, 0.0f, 0.0f);
-            Destroy(gameObject, 2.0f);
+            Destroy(gameObject);
         }
     }
 }

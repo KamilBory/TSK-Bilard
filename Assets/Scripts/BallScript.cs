@@ -35,7 +35,7 @@ public class BallScript : MonoBehaviour
             SceneManager.LoadScene("SampleScene");
         }
 
-        transform.position += gravity * Time.deltaTime;
+        //transform.position += gravity * Time.deltaTime;
 
         //BallsCollision();
     }
@@ -68,6 +68,11 @@ public class BallScript : MonoBehaviour
             rigidbody.AddForce(velNormalTag1 + velTangentTag1);
             collision.rigidbody.AddForce(velNormalTag2 + velTangentTag2);
         }
+
+        if (collision.gameObject.tag == "Band")
+        {
+
+        }
     }
 
     private void OnCollisionExit(Collision collision)
@@ -99,11 +104,6 @@ public class BallScript : MonoBehaviour
 
             rigidbody.AddForce(velNormalTag1 + velTangentTag1);
             collision.rigidbody.AddForce(velNormalTag2 + velTangentTag2);
-        }
-
-        if(collision.gameObject.tag == "Band")
-        {
-
         }
     }
 }
