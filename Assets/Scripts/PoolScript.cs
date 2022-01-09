@@ -1,7 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class PoolScript : MonoBehaviour
@@ -41,11 +40,6 @@ public class PoolScript : MonoBehaviour
     void Update()
     {
         gameObject.transform.position += moveVec * Time.deltaTime;
-
-        if (Input.GetKeyDown("r"))
-        {
-            SceneManager.LoadScene("SampleScene");
-        }
     }
 
     private void GoAround()
@@ -143,6 +137,7 @@ public class PoolScript : MonoBehaviour
         {
             collision.rigidbody.AddForce(moveVec * powerSlider.value);
             moveVec = new Vector3(0.0f, 0.0f, 0.0f);
+            Destroy(gameObject, 2.0f);
         }
     }
 }
