@@ -10,16 +10,25 @@ public class BallScript : MonoBehaviour
     private Vector3 gravity = new Vector3(0.0f, 0.0f, 0.0f);
     private Rigidbody rigidbody;
     private float ballHeight = 3.0f;
+    private float vel = 0.0f;
+    private Vector3 startPosition;
 
     // Start is called before the first frame update
     void Start()
     {
         rigidbody = gameObject.GetComponent<Rigidbody>();
+        vel = gameObject.GetComponent<Rigidbody>().velocity.magnitude;
+        startPosition = transform.position;
     }
 
     // Update is called once per frame
     void Update()
     {
+        if (vel < gameObject.GetComponent<Rigidbody>().velocity.magnitude)
+        {
+            vel = gameObject.GetComponent<Rigidbody>().velocity.magnitude;
+        }
+
         transform.position = new Vector3(transform.position.x, ballHeight, transform.position.z);
         if(!isGrounded)
         {
@@ -86,5 +95,28 @@ public class BallScript : MonoBehaviour
         {
             isGrounded = false;
         }
+    }
+
+    public float getVel()
+    {
+        return vel;
+    }
+
+    public float getDis()
+    {
+        float x = transform.position.x - startPosition.x;
+        float z = transform.position.z - startPosition.z;
+        float distance = x * x + z * z;
+        return distance;
+    }
+
+    public float getSX()
+    {
+        return startPosition.x;
+    }
+
+    public float getSZ()
+    {
+        return startPosition.z;
     }
 }
