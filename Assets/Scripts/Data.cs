@@ -27,11 +27,8 @@ public class Data : MonoBehaviour
         if (Input.GetKeyDown("s"))
         {
             UpData();
-        }
-
-        if (Input.GetKeyDown("d"))
-        {
             writer.Close();
+            writer = new StreamWriter("C:/Studia/6sem/TSK/dane.txt", true);
         }
     }
 
