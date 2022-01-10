@@ -12,6 +12,9 @@ public class BallScript : MonoBehaviour
     private float ballHeight = 3.0f;
     private float vel = 0.0f;
     private Vector3 startPosition;
+    private Vector3 dist1 = new Vector3(0.0f, 0.0f, 0.0f);
+    private Vector3 dist2 = new Vector3(0.0f, 0.0f, 0.0f);
+    private float addDist = 0.0f;
 
     // Start is called before the first frame update
     void Start()
@@ -85,7 +88,22 @@ public class BallScript : MonoBehaviour
 
         if (collision.gameObject.tag == "Band")
         {
-
+            if(dist1 == new Vector3(0.0f, 0.0f, 0.0f))
+            {
+                dist1 = transform.position;
+                float tmpx = dist1.x - startPosition.x;
+                float tmpz = dist1.z - startPosition.z;
+                addDist += Mathf.Abs(tmpx);
+                addDist += Mathf.Abs(tmpz);
+            }
+            else
+            {
+                dist2 = transform.position;
+                float tmpx1 = dist2.x - dist1.x;
+                float tmpz1 = dist2.z - dist1.z;
+                addDist += Mathf.Abs(tmpx1);
+                addDist += Mathf.Abs(tmpz1);
+            }
         }
     }
 
@@ -106,8 +124,11 @@ public class BallScript : MonoBehaviour
     {
         float x = transform.position.x - startPosition.x;
         float z = transform.position.z - startPosition.z;
-        float distance = x + z;
-        return Mathf.Abs(distance);
+        float distance = Mathf.Abs(x) + Mathf.Abs(z) + addDist;
+        addDist = 0.0f;
+        dist1 = new Vector3(0.0f, 0.0f, 0.0f);
+        dist2 = new Vector3(0.0f, 0.0f, 0.0f);
+        return distance;
     }
 
     public float getSX()
