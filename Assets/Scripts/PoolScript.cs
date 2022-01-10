@@ -122,7 +122,7 @@ public class PoolScript : MonoBehaviour
             z = enrtyPosition.z + (1.0f - tmp) * powerSlider.value;
         }
 
-        transform.position = new Vector3(x, transform.position.y, z);
+        transform.position = new Vector3(x, transform.position.y, z + whiteBall.GetComponent<MoveWhite>().getOffset());
     }
 
     public void HitBall()

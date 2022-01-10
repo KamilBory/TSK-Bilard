@@ -426,6 +426,7 @@ GameObject:
   - component: {fileID: 316739730}
   - component: {fileID: 316739734}
   - component: {fileID: 316739735}
+  - component: {fileID: 316739736}
   m_Layer: 0
   m_Name: WhiteBall
   m_TagString: Ball
@@ -535,6 +536,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 39585c8fda24c024c961bf335ceb1ac3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &316739736
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 316739729}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 942dd074e4347dd468bd11ca37658239, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pool: {fileID: 710513399}
+  offset: 0
 --- !u!1 &436924427
 GameObject:
   m_ObjectHideFlags: 0
