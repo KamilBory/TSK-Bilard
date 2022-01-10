@@ -106,7 +106,7 @@ public class BallScript : MonoBehaviour
     {
         float x = transform.position.x - startPosition.x;
         float z = transform.position.z - startPosition.z;
-        float distance = x * x + z * z;
+        float distance = x + z;
         return distance;
     }
 
